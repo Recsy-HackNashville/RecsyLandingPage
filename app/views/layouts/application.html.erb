@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RecsyRails</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <link rel="stylesheet/less" type="text/css" href="/bootstrap/less/bootstrap.less" />
+        <link rel="stylesheet/less" type="text/css" href="/bootstrap/less/custom.less" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet/less" type="text/css" href="/builder.less">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="/js/custom.js"></script>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+    <header>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/logo.png" class="logo" /> RECSY</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li><a href="/plans">Plans and Pricing</a></li>
+            <li><a href="/examples">Website Examples</a></li>
+            <li><a href="/about">About Recsy</a></li>
+            	<% if user_signed_in? %>
+    				<li><p class="signedin">Signed in as <%= current_user.name %>. Not you? &nbsp;<%= link_to "Sign out", destroy_user_session_path, method: :delete %></p></li>
+					<% else %>
+    				<li><%= link_to "Sign in/Register with Linkedin", user_omniauth_authorize_path(:linkedin) %></li>
+				<% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    	</div>
+   	</header>
+    <div class="container">
+        <% if notice %>
+            <div class="alert alert-warning fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <%= notice %>
+            </div>
+        <% end %>
+        <% if alert %>
+            <div class="alert alert-warning fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <%= alert %>
+            </div>
+        <% end %>
+        <%= yield %>
+    </div>
+     <footer class="footer-3">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-sm-12">
+					<h6>Nashville, TN</h6>
+					<div class="address">
+						Built at HackNashville 5
+					</div>
+				</div>
+			</div>
+		</div>
+    </footer>
+</body>
+</html>
