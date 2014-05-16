@@ -32,11 +32,7 @@
             <li><a href="/plans">Plans and Pricing</a></li>
             <li><a href="/examples">Website Examples</a></li>
             <li><a href="/about">About Recsy</a></li>
-            	<% if user_signed_in? %>
-    				<li><p class="signedin">Signed in as <%= current_user.name %>. Not you? &nbsp;<%= link_to "Sign out", destroy_user_session_path, method: :delete %></p></li>
-					<% else %>
-    				<li><%= link_to "Sign in/Register with Linkedin", user_omniauth_authorize_path(:linkedin) %></li>
-				<% end %>
+            	
           </ul>
         </div><!--/.nav-collapse -->
       </div>
