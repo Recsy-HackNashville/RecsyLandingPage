@@ -1,0 +1,120 @@
+<script src="<%= @path %>/js/iframeResize.js"></script>
+<div class="row">
+	<div class="col-md-12">
+		<div class="row"><h3 style="text-align: center;">Personal Website Builder<br></h3></div>
+		<div class="row"><!--
+    <div class="col-sm-7"><p style="text-align: center;">
+    	<br>
+    	<% name_split = current_user.name.gsub(/\s+/, "") %>
+    	www.<%=name_split%>.com</p></div>--></div>
+	</div>
+</div>
+<div class="col-sm-7"><p style="text-align: center;" class="clearfix pull-left">
+<button onClick="toggleFullScreen();" class="btn btn-update"> <small><i class="fa fa-arrows-h"></i> Toggle Full Screen</small></button>
+<div class="col-sm-3"><button onClick="window.location='/profile/<%= @current_user.id %>';" class="btn btn-update"> <small><i class="fa fa-magic"></i> See Site</small></button></div>
+</div></p>
+<div class="row">
+    <div class="col-sm-7">
+        <div class="wrapper">
+            <iframe id="builderIFrame" src="<%= builder_view_path %>"></iframe>
+        </div>
+        
+	</div>
+    <div id="templateData" class="col-sm-5">
+    	<div class="add-section">
+    		<%= form_tag(sections_path, { class: 'form-horizontal' }) do %>
+            	<select name="section_type_id">
+                	<% @sectionTypes.each do |type| %>
+                    	<option value="<%= type.id %>"><%= type.name %></option>
+                	<% end %>
+            	</select>
+            	<button type="submit" class="btn btn-update"><small> Add Section</small></button>
+        	<% end %>
+    	</div>
+    	<!-- Nav tabs -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+  			<% @sections.each_with_index do |section, key| %>
+            <li><a href="#<%= section.id %>"data-toggle="tab"><%= section.section_type.name %></a></li>
+            <% end %>
+		</ul>
+    	<div class="wrapper form">
+    	<div class="tab-content">
+
+    		<div class="tab-pane active" id="profile">
+				<%= form_for @current_user, html: { method: :put, class: 'form-horizontal'} do |f|%>
+				<div class="form-group">
+					<div class="col-md-12">
+					  	<div class="form-group">
+					    	<label class="col-sm-3 control-label">Headline</label>
+					    	<div class="col-sm-9">
+					        	<input type="text" class="form-control" name="user[headline]" id="user_headline" value="<%= @current_user.headline %>"  >
+					    	</div>
+						</div>	
+
+					  	<div class="form-group">
+					    	<label class="col-sm-3 control-label">Tagline</label>
+					    	<div class="col-sm-9">
+					        	<input type="text" class="form-control" name="user[location_name]" id="user_location_name" value="<%= @current_user.location_name %>"  >
+					    	</div>
+						</div>	
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-update heightFix">Update</button>
+					</div>
+				</div>
+				<% end %>
+			</div>
+
+        	<% @sections.each_with_index do |section, key| %>
+    			<div class="tab-pane" id="<%= section.id %>">
+				<%= form_tag(section_path(section), { class: 'form-horizontal', method: 'PUT' }) do %>
+					<div class="form-group">
+						<div class="col-sm-12">
+					
+							<%= link_to '<button type="submit" class="btn btn-remove"><i class="fa fa-minus-square"></i> Remove Section</button>'.html_safe, section, method: :delete %>
+						</div>
+					</div>
+				
+
+				<% section.section_items.each do |sItem| %>
+				<div class="form-group">
+					<div class="col-sm-12">
+
+						<% section.section_type.section_fields.each do |field| %>
+
+						<% item = sItem.section_text_items.where(section_item_id: sItem.id, section_field_id: field.id).first %>
+						<div class="form-group">
+    					<label class="col-sm-3 control-label"><%= field.label %></label>
+    					<div class="col-md-9 clearfix center-block">
+        					<input type="hidden" name="section_<%= field.field_table_name %>_<%= item.id %>_section_field_id" value="<%= field.id %>">
+        					<input type="hidden" name="section_<%= field.field_table_name %>_<%= item.id %>_section_item_id" value="<%= sItem.id %>">
+        					<input type="text" class="form-control" name="section_<%= field.field_table_name %>_<%= item.id %>_text" value="<%= item.text %>">
+    					</div>
+						</div>
+						<% end %>
+
+
+					</div>
+				</div>
+				<% end %>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button type="submit" class="btn btn-update heightFix">Update</button>
+						</div>
+					</div>
+					<% end %>
+				</div>
+        	<% end %>
+
+       		</div><!--end tab-content-->
+      	</div>
+    </div>
+</div>
+
+<footer>
+	<div class="footer">
+	</div>
+</footer>

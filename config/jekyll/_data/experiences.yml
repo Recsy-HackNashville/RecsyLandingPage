@@ -1,0 +1,19 @@
+- companyName: Recsy
+  position: CEO and Co-Founder
+  description: We started a sick company to make websites for college students!
+  photo: ex1.png
+
+- companyName: Unique Air Services, Inc.
+  position: Freelance Software Engineer
+  description: Making an app, working for my dad
+  photo: ex2.png
+
+- companyName: HCA
+  position: Intern
+  description: Interned for a year!
+  photo: ex3.png
+
+- companyName: whatever
+  position: baller
+  description: drug dealer
+  photo: doge.png

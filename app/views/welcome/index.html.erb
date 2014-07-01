@@ -1,0 +1,72 @@
+<style>body{background: url('/images/zachFrontPic.png'); background-repeat: no-repeat; background-size: 1300px; width:100%; height:100%;}.banner{font-family:Oswald; sans-serif;}footer{display: none;}</style>
+<div class="banner home">
+    		<div class="row">
+          <h1><br><br><br></h1><p><br></p>
+    			<% if user_signed_in? %>
+    				<a href="/builder" class="btn btn-lg btn-primary">Create Your Website</a>
+					<% else %>
+					<a href="/users/auth/linkedin" class="btn btn-lg btn-primary"><img style="vertical-align: middle;" width="14%" class="clearfix center-block pull-left" src="/images/linkedin_64.png"/> Try it with LinkedIn </a>
+				<% end %>
+
+    		</div><!--end row-->
+    	</div><!-- /.container -->
+	 </div><!--end homebanner-->
+     <!--<form accept-charset="UTF-8" action="sendPostData" class="edit_post" method="post" data-remote="true" username="recsy-team" password="SomeSeveral044">
+      <div id="split">
+        <div id="post-editor" class="split-section">
+          <div id="text-title">
+            <textarea cols="40" id="post-title" name="post[title]" placeholder="Title here" rows="1">jfklsdjflajs</textarea>
+            <input type="hidden" id="post_name" name="post[name]" value="2014-05-22-jfklsdjflajs.md">
+          </div>
+      
+          <div id="text-content">
+            <textarea cols="40" id="post-content" name="post[content]" placeholder="Write post here" rows="18">mycontent</textarea>
+          </div>
+        </div>
+      </div>
+      <div id="publish-bar-hover">
+        <div id="publish-bar">
+          <div class="contain">
+            <div class="left">
+              <a href="/admin/">&laquo; ADMIN</a>
+              
+              <div class="yaml-block">
+                <div class="yaml-table arrow-box">
+                  <div class="yaml-table-inner">
+                  <ul>
+                    <li>
+                      
+                      <div class="value"><input type="text" class="yaml-value" name="post[yaml][title]" value="jfklsdjflajs"/></div>
+                    </li>
+                    <li>
+                      <div class="value"><input type="text" class="yaml-value" name="post[yaml][layout]" value="post"/></div>
+                    </li>
+                    <li>
+                      <div class="value"><input type="text" class="yaml-value" name="post[yaml][published]" value="true"/></div>
+                    </li>
+                    <li>
+                      <div class="value"><input type="text" class="yaml-value" name="post[yaml][hi]" value="hmmmmmmm"/></div>
+                    </li>
+                    <li>
+                      <div class="value"><input type="text"  name="ajax" value="true"/></div>
+                    </li>
+                  <li class="add-yaml-entry"> Add new item </li>
+                  </ul>
+                  </div>
+                </div>
+                <a id="#" class="button">DATA</a>
+              </div>
+            </div>
+            <div class="right">
+
+              <div class="draft-options">
+                <a id="draft-action" class="button selected" href="#">DRAFT</a>
+                <a id="publish-action" class="button " href="#">DONE</a>
+              </div>
+              <input id="save-button" name="commit" type="submit" value="SAVE" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>-->
+
