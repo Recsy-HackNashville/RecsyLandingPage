@@ -32,14 +32,7 @@
             <li><a href="/plans">Plans and Pricing</a></li>
             <li><a href="/examples">Website Examples</a></li>
             <li><a href="/about">About Recsy</a></li>
-            	<% if user_signed_in? %>
-    				<li class="dropdown clearfix"><a href="#" data-toggle="dropdown" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;<img class="img-circle" src="<%= current_user.picture_url  %>" width="30px" height="30px" /> &nbsp;<%= current_user.name %> &nbsp;<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                </ul></li>
-					<% else %>
-    				<li><%= link_to "Sign in/Register with Linkedin", user_omniauth_authorize_path(:linkedin) %></li>
-				<% end %>
+            	
           </ul>
         </div><!--/.nav-collapse -->
       </div>
