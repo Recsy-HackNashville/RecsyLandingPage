@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  section_type_id: 1
-  field_table_name: MyString
-
-two:
-  section_type_id: 1
-  field_table_name: MyString
