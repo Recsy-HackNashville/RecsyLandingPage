@@ -32,6 +32,7 @@ rake db:seed
 cd <app path>
 rails server
 ```
+<<<<<<< HEAD
 
 To create a post: $rake np <yourposttitle>
 
@@ -46,3 +47,5 @@ $ git commit -m &lsquo;your commit message'
 $ git push
 
 Documentation on bloggy: https://blog.engineyard.com/2012/introducing-bloggy-a-simple-way-to-add-a-jekyll-blog-to-any-rails-application
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54

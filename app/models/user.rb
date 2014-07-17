@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
     devise :database_authenticatable, :rememberable, :trackable, :omniauthable
     has_many :sections, dependent: :destroy
 
+<<<<<<< HEAD
 def jekyll_site
       if not @site
         # Supress stdout
@@ -139,6 +140,9 @@ CONF
         
         require 'linkedin'
 
+=======
+    def self.connect_to_linkedin(auth, signed_in_resource = nil)
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
         user = User.where(provider: auth.provider, uid: auth.uid).first
         if user
             return user
@@ -147,6 +151,7 @@ CONF
             if registered_user
                 return registered_user
             else
+<<<<<<< HEAD
                 
                 puts "[INFO] Creating user"
                 puts auth.to_yaml
@@ -158,11 +163,16 @@ CONF
                 clientPictureUrl = client.picture_urls.all.first
                 puts "clientPictureUrl"
                 puts clientPictureUrl
+=======
+                puts "[INFO] Creating user"
+                puts auth.to_yaml
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
                 User.create(
                     name: auth.info.name,
                     provider: auth.provider,
                     uid: auth.uid,
                     email: auth.info.email,
+<<<<<<< HEAD
                     password: Devise.friendly_token[0, 20],
                     headline: auth.info.headline,
                     location_name: auth.info.location,
@@ -311,6 +321,10 @@ CONF
 
 
                 return User.where(email: auth.info.email).first
+=======
+                    password: Devise.friendly_token[0, 20]
+                )
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
             end
         end
     end  

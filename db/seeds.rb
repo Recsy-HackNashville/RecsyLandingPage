@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 one = SectionType.create(name: "Home")
 two = SectionType.create(name: "Experience")
+<<<<<<< HEAD
 thr = SectionType.create(name: "Projects")
 fou = SectionType.create(name: "Contact")
 fiv = SectionType.create(name: "Education")
@@ -49,4 +50,17 @@ SectionField.create(section_type_id: fiv.id, field_table_name: 'text', label: 'E
 SectionField.create(section_type_id: two.id, field_table_name: 'text', label: 'Logo URL')#30
 
 
+=======
+thr = SectionType.create(name: "Project")
+fou = SectionType.create(name: "Contact")
+
+SectionField.create(section_type_id: one.id, field_table_name: 'text', label: 'name')
+SectionField.create(section_type_id: one.id, field_table_name: 'text', label: 'address')
+
+SectionField.create(section_type_id: two.id, field_table_name: 'text', label: 'Location')
+
+SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Field')
+SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Skills')
+SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Best parts')
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 

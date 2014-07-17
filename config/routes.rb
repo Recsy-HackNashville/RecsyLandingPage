@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/builder', to: 'builder#index'
   get 'builder/view', to: 'builder#view'
+<<<<<<< HEAD
   get '/profile/:id', to: 'builder#viewParam'
 
   post 'builder/update', to: 'builder#update'
@@ -20,6 +21,12 @@ Rails.application.routes.draw do
   resources :section_text_items
   
 
+=======
+
+  post 'builder/update', to: 'builder#update'
+
+  resources :sections
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

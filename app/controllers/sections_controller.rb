@@ -1,10 +1,14 @@
 class SectionsController < ApplicationController
+<<<<<<< HEAD
     protect_from_forgery :only => [:create, :update, :destroy]
 
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     def create
         section_type_id = params[:section_type_id]
         section_type = SectionType.where(id: params[:section_type_id]).first
         if section_type
+<<<<<<< HEAD
             alreadyThatSectionType = false
             Section.where(user_id: current_user.id).each do |s|
                 if s.section_type == section_type
@@ -29,6 +33,16 @@ class SectionsController < ApplicationController
                 end
             else 
                 flash[:alert] = "You already have that section"
+=======
+            section = Section.new(
+               section_type_id: section_type.id,
+               user_id: current_user.id
+            )
+            if section.save
+                flash[:notice] = "Section added!!"
+            else
+                flash[:alert] = "Section could not be added :*("
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
             end
         else
             flash[:alert] = "Not a valid section type"
@@ -73,6 +87,7 @@ class SectionsController < ApplicationController
     def delete
 
     end
+<<<<<<< HEAD
 
     def destroy
         @sections = Section.where(user_id: current_user.id).all
@@ -80,4 +95,6 @@ class SectionsController < ApplicationController
         @section.destroy
         redirect_to controller: :builder, action: :index
     end
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 end

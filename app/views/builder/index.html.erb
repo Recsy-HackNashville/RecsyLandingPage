@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script src="<%= @path %>/js/iframeResize.js"></script>
 <div class="row">
 	<div class="col-md-12">
@@ -21,6 +22,21 @@
         
 	</div>
     <div id="templateData" class="col-sm-5">
+=======
+<div class="row">
+	<div class="col-md-12">
+		<h1>Page Builder</h1>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-7">
+        <div class="wrapper">
+            <iframe src="<%= builder_view_path %>"></iframe>
+        </div>
+    </div>
+    <div class="col-sm-5">
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     	<div class="add-section">
     		<%= form_tag(sections_path, { class: 'form-horizontal' }) do %>
             	<select name="section_type_id">
@@ -28,18 +44,28 @@
                     	<option value="<%= type.id %>"><%= type.name %></option>
                 	<% end %>
             	</select>
+<<<<<<< HEAD
             	<button type="submit" class="btn btn-update"><small> Add Section</small></button>
+=======
+            	<button type="submit" class="btn btn-update">Add Section</button>
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
         	<% end %>
     	</div>
     	<!-- Nav tabs -->
 		<ul class="nav nav-tabs">
+<<<<<<< HEAD
 			<li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
   			<% @sections.each_with_index do |section, key| %>
             <li><a href="#<%= section.id %>"data-toggle="tab"><%= section.section_type.name %></a></li>
+=======
+  			<% @sections.each_with_index do |section, key| %>
+            <li class="<%= key == 0 ? 'active':'' %>"><a href="#<%= section.id %>"data-toggle="tab"><%= section.section_type.name %></a></li>
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
             <% end %>
 		</ul>
     	<div class="wrapper form">
     	<div class="tab-content">
+<<<<<<< HEAD
 
     		<div class="tab-pane active" id="profile">
 				<%= form_for @current_user, html: { method: :put, class: 'form-horizontal'} do |f|%>
@@ -109,6 +135,32 @@
 				</div>
         	<% end %>
 
+=======
+        	<% @sections.each_with_index do |section, key| %>
+    			<div class="tab-pane <%= key == 0 ? 'active':'' %>" id="<%= section.id %>">
+					<%= form_tag(section_path(section), { class: 'form-horizontal', method: 'PUT' }) do %>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-remove">Remove Section</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<% section.section_type.section_fields.each do |field| %>
+									<% item = field.send("section_#{field.field_table_name}_item") %>
+									<%= render "partials/#{field.field_table_name}", field: field, item: item %>
+								<% end %>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-update heightFix">Update</button>
+							</div>
+						</div>
+					<% end %>
+				</div>
+        	<% end %>
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
        		</div><!--end tab-content-->
       	</div>
     </div>

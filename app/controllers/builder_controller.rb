@@ -1,4 +1,5 @@
 class BuilderController < ApplicationController
+<<<<<<< HEAD
         require 'net/http'
         require 'net/https'
         require 'uri'
@@ -6,12 +7,15 @@ class BuilderController < ApplicationController
         require 'open-uri'
 
 
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     def initialize
         super
         @publicPath = Rails.root.join('public')
     end
 
     def index
+<<<<<<< HEAD
         
         @sectionTypes = SectionType.all
         @sections = Section.where(user_id: current_user.id)
@@ -101,6 +105,25 @@ class BuilderController < ApplicationController
         rescue
         end
         render "#{@publicPath.to_s}/#{@path}/#{@name}#{@myId}.html.erb", layout: false
+=======
+        @sectionTypes = SectionType.all
+        @sections = Section.where(user_id: current_user.id)
+    end
+
+    def view
+        # Tells the template how to reach its resources
+        # The template should be using this for every http request
+        @path = '/templates/zach'
+        @homeSection = Section.where(user_id: current_user.id).first
+        @nameField = { text: '' }
+        @addressField = { text: '' }
+        begin
+            @nameField = @homeSection.section_text_items.first
+            @addressField = @homeSection.section_text_items[1]
+        rescue
+        end
+        render "#{@publicPath.to_s}/#{@path}/index.html.erb", layout: false
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     end
 
     def update

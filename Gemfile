@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-linkedin' 
+<<<<<<< HEAD
 gem 'linkedin'
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,11 +37,14 @@ gem 'right_aws', :git => 'git://github.com/rightscale/right_aws.git'
 
 gem 'thin'
 
+<<<<<<< HEAD
 gem 'bloggy'
 
 gem 'capistrano'
 
 
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 source "https://rubygems.org"
 ruby "1.9.3"
 

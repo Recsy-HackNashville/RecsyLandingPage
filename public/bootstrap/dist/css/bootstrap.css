@@ -1268,7 +1268,11 @@ pre code {
     width: 50%;
   }
   .col-lg-5 {
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 41.66666667%;
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
   }
   .col-lg-4 {
     width: 33.33333333%;
@@ -3459,7 +3463,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
+<<<<<<< HEAD
   padding: 10px 5px;
+=======
+  padding: 10px 15px;
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 }
 .nav > li > a:hover,
 .nav > li > a:focus {

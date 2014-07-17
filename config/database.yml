@@ -7,7 +7,11 @@
 development:
   adapter: postgresql
   encoding: utf8
+<<<<<<< HEAD
   database: recsy_database_development
+=======
+  database: ZachBoyette
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
   pool: 5
   timeout: 5000
   host: localhost
@@ -18,7 +22,11 @@ development:
 test:
   adapter: postgresql
   encoding: utf8
+<<<<<<< HEAD
   database: recsy_database_test
+=======
+  database: ZachBoyette
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
   pool: 5
   timeout: 5000
   username: ZachBoyette

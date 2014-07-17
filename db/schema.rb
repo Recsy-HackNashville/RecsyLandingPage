@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140526173446) do
+=======
+ActiveRecord::Schema.define(version: 20140516035751) do
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,17 +27,28 @@ ActiveRecord::Schema.define(version: 20140526173446) do
   end
 
   create_table "section_items", force: true do |t|
+<<<<<<< HEAD
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "section_text_items", force: true do |t|
+=======
+    t.integer "section_id"
+  end
+
+  create_table "section_text_items", force: true do |t|
+    t.integer  "section_id"
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     t.integer  "section_field_id"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.integer  "section_item_id"
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
   end
 
   create_table "section_types", force: true do |t|
@@ -61,9 +76,12 @@ ActiveRecord::Schema.define(version: 20140526173446) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+<<<<<<< HEAD
     t.string   "headline"
     t.string   "location_name"
     t.string   "picture_url"
+=======
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+<<<<<<< HEAD
         require 'net/http'
         require 'uri'
         require 'json'
@@ -127,6 +128,11 @@ http = Net::HTTP.new(uri.host, uri.port)
         #@myResponse2 = res
 
 
+=======
+
+    def index
+
+>>>>>>> aebf6910fde7b673bf09dccd86fc66a5fc152d54
     end
     def plans
 
